@@ -57,10 +57,13 @@ SELECT title FROM movies ORDER BY title ASC LIMIT 5 OFFSET 5;
 - List the two largest cities in Mexico (by population) ✓
 - List the third and fourth largest cities (by population) in the United States and their population ✓
 
-BONUS: SELECT * FROM north_american_cities;
 SELECT city, population FROM north_american_cities WHERE country = "Canada";
 SELECT city FROM north_american_cities WHERE country = "United States" ORDER BY latitude DESC;
 SELECT city FROM north_american_cities WHERE Longitude < -87.629798 ORDER BY Longitude ASC;
 SELECT * FROM north_american_cities WHERE country = "Mexico" ORDER BY population DESC LIMIT 2;
 SELECT city FROM north_american_cities WHERE country = "Mexico" ORDER BY population DESC LIMIT 2
 SELECT city FROM north_american_cities WHERE country = "United States" ORDER BY population DESC LIMIT 2 OFFSET 2;
+
+BONUS: SELECT * FROM north_american_cities;
+
+#Multi-table queries with JOINs
