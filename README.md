@@ -39,11 +39,11 @@ SELECT * FROM movies WHERE director LIKE "John Lasseter";
 SELECT * FROM movies WHERE director NOT LIKE "John Lasseter";
 SELECT * FROM movies WHERE title LIKE "%WALL%";
 
-Filtering and sorting Query results
-List all directors of Pixar movies (alphabetically), without duplicates ✓
-List the last four Pixar movies released (ordered from most recent to least) ✓
-List the first five Pixar movies sorted alphabetically ✓
-List the next five Pixar movies sorted alphabetically ✓
+#Filtering and sorting Query results
+- List all directors of Pixar movies (alphabetically), without duplicates ✓
+- List the last four Pixar movies released (ordered from most recent to least) ✓
+- List the first five Pixar movies sorted alphabetically ✓
+- List the next five Pixar movies sorted alphabetically ✓
 
 SELECT DISTINCT director FROM movies ORDER BY director ASC;
 SELECT DISTINCT title FROM movies ORDER BY year DESC LIMIT 4;
