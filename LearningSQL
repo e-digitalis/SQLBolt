@@ -1,0 +1,13 @@
+
+
+
+#SELECT statements
+SELECT title FROM movies;
+SELECT director FROM movies;
+SELECT title, director FROM movies;
+SELECT title, year FROM movies;
+SELECT * FROM movies;
+
+#Queries with constraints (Pt. 1)
+SELECT * FROM movies
+WHERE id = 6;
