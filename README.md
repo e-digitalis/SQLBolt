@@ -29,6 +29,11 @@ SELECT * FROM movies WHERE year NOT BETWEEN 2000 AND 2010;
 SELECT * FROM movies WHERE id <= 5;
 
 #Queries with constraints (Pt. 2)
+- Find all the Toy Story movies ✓
+- Find all the movies directed by John Lasseter ✓
+- Find all the movies (and director) not directed by John Lasseter ✓
+- Find all the WALL-* movies ✓
+
 SELECT * FROM movies WHERE title LIKE "%Toy Story%";
 SELECT * FROM movies WHERE director LIKE "John Lasseter";
 SELECT * FROM movies WHERE director NOT LIKE "John Lasseter";
