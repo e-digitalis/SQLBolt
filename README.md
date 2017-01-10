@@ -126,3 +126,10 @@ SELECT Role, SUM(Years_employed)  AS Total_Number_of_Years_Engineers_Employed FR
 
 SELECT Director, COUNT(Title) AS Number_of_Movies_Directed FROM movies GROUP BY  Director;
 SELECT Director, SUM(Domestic_sales) + SUM (International_sales) AS Gross_Earnings_Per_Director FROM movies JOIN Boxoffice ON Movies.ID = Boxoffice.Movie_id  GROUP BY  Director;
+
+#Inserting rows
+Add the studio's new production, Toy Story 4 to the list of movies (you can use any director) ✓
+Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the  BoxOffice table. ✓
+
+INSERT INTO Movies VALUES (4, "Toy Story 4", "Elissa Bardia", 2017, 105);
+INSERT INTO Boxoffice VALUES (4, 8.7, 340000000, 270000000);
