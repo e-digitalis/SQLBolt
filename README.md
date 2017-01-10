@@ -67,3 +67,12 @@ SELECT city FROM north_american_cities WHERE country = "United States" ORDER BY 
 BONUS: SELECT * FROM north_american_cities;
 
 #Multi-table queries with JOINs
+- Find the domestic and international sales for each movie ✓
+- Show the sales numbers for each movie that did better internationally rather than domestically ✓
+- List all the movies by their ratings in descending order ✓
+
+SELECT Title, Domestic_sales, International_sales FROM Movies INNER JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id;
+SELECT Title, Domestic_sales, International_sales FROM Movies INNER JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id WHERE International_sales > Domestic_sales;
+
+
+BONUS: SELECT * FROM movies;
