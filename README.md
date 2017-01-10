@@ -87,3 +87,26 @@ SELECT Building_name, Capacity FROM Buildings;
 SELECT DISTINCT Building_name, Role FROM Buildings LEFT JOIN Employees ON Buildings.Building_name  = Employees.Building;
 
 BONUS: SELECT * FROM employees;
+
+#A short note on NULLs
+- Find the name and role of all employees who have not been assigned to a building ✓
+- Find the names of the buildings that hold no employees ✓
+
+SELECT  Name, Role FROM Employees LEFT JOIN Buildings ON Employees.Building = Buildings.Building_name WHERE Building IS NULL;
+SELECT Building_name FROM Buildings LEFT JOIN Employees ON Buildings.Building_name  = Employees.Building WHERE Name IS NULL;
+
+#Queries with expressions
+- List all movies and their combined sales in millions of dollars ✓
+- List all movies and their ratings in percent ✓
+
+SELECT Title, (Domestic_sales + International_sales) / 1000000 AS Millions_of_dollars FROM movies INNER JOIN boxoffice ON Movies.Id = Boxoffice.Movie_id;
+SELECT Title, (Rating/10)*100 AS Rating_percentage FROM movies INNER JOIN boxoffice ON Movies.Id = Boxoffice.Movie_id;
+
+#Queries with aggregates (Pt. 1)
+- Find the longest time that an employee has been at the studio ✓
+- For each role, find the average number of years employed by employees in that role ✓
+- Find the total number of employee years worked in each building ✓
+
+SELECT MAX(Years_employed) FROM employees;
+SELECT Role, AVG(Years_employed) FROM employees GROUP BY Role;
+SELECT Building, SUM(Years_employed) AS Sum_of_years_employed FROM employees GROUP BY Building;
