@@ -110,3 +110,12 @@ SELECT Title, (Rating/10)*100 AS Rating_percentage FROM movies INNER JOIN boxoff
 SELECT MAX(Years_employed) FROM employees;
 SELECT Role, AVG(Years_employed) FROM employees GROUP BY Role;
 SELECT Building, SUM(Years_employed) AS Sum_of_years_employed FROM employees GROUP BY Building;
+
+#Queries with aggregates (Pt. 2)
+- Find the number of Artists in the studio (without a HAVING clause) ✓
+- Find the number of Employees of each role in the studio ✓
+- Find the total number of years employed by all Engineers ✓
+
+SELECT Role, COUNT(Role) AS Number_of_Employees_PerRole FROM employees WHERE Role = 'Artist';
+SELECT Role, COUNT(Role) AS Number_of_Employees_PerRole FROM employees GROUP BY Role;
+SELECT Role, SUM(Years_employed)  AS Total_Number_of_Years_Engineers_Employed FROM employees WHERE Role = 'Engineer' GROUP BY Role;
