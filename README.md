@@ -73,6 +73,17 @@ BONUS: SELECT * FROM north_american_cities;
 
 SELECT Title, Domestic_sales, International_sales FROM Movies INNER JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id;
 SELECT Title, Domestic_sales, International_sales FROM Movies INNER JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id WHERE International_sales > Domestic_sales;
-
+SELECT Title, Rating FROM Movies INNER JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id ORDER BY Rating DESC;
 
 BONUS: SELECT * FROM movies;
+
+#OUTER JOINs
+- Find the list of all buildings that have employees ✓
+- Find the list of all buildings and their capacity ✓
+- List all buildings and the distinct employee roles in each building (including empty buildings) ✓
+
+SELECT DISTINCT Building FROM Employees LEFT JOIN Buildings  ON Employees.Building = Buildings.Building_name;
+SELECT Building_name, Capacity FROM Buildings;
+SELECT DISTINCT Building_name, Role FROM Buildings LEFT JOIN Employees ON Buildings.Building_name  = Employees.Building;
+
+BONUS: SELECT * FROM employees;
