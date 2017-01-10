@@ -121,3 +121,8 @@ SELECT Role, COUNT(Role) AS Number_of_Employees_PerRole FROM employees GROUP BY 
 SELECT Role, SUM(Years_employed)  AS Total_Number_of_Years_Engineers_Employed FROM employees WHERE Role = 'Engineer' GROUP BY Role;
 
 #Order of execution of a Query
+- Find the number of movies each director has directed ✓
+- Find the total domestic and international sales that can be attributed to each director ✓
+
+SELECT Director, COUNT(Title) AS Number_of_Movies_Directed FROM movies GROUP BY  Director;
+SELECT Director, SUM(Domestic_sales) + SUM (International_sales) AS Gross_Earnings_Per_Director FROM movies JOIN Boxoffice ON Movies.ID = Boxoffice.Movie_id  GROUP BY  Director;
