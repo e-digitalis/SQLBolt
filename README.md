@@ -119,3 +119,5 @@ SELECT Building, SUM(Years_employed) AS Sum_of_years_employed FROM employees GRO
 SELECT Role, COUNT(Role) AS Number_of_Employees_PerRole FROM employees WHERE Role = 'Artist';
 SELECT Role, COUNT(Role) AS Number_of_Employees_PerRole FROM employees GROUP BY Role;
 SELECT Role, SUM(Years_employed)  AS Total_Number_of_Years_Engineers_Employed FROM employees WHERE Role = 'Engineer' GROUP BY Role;
+
+#Order of execution of a Query
