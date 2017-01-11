@@ -133,3 +133,12 @@ Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and m
 
 INSERT INTO Movies VALUES (4, "Toy Story 4", "Elissa Bardia", 2017, 105);
 INSERT INTO Boxoffice VALUES (4, 8.7, 340000000, 270000000);
+
+#Updating rows
+- The director for A Bug's Life is incorrect, it was actually directed by John Lasseter ✓
+- The year that Toy Story 2 was released is incorrect, it was actually released in 1999 ✓
+- Both the title and directory for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich ✓
+
+UPDATE movies SET Director = "John Lasseter" WHERE title = 	"A Bug's Life";
+UPDATE movies SET Year = "1999" WHERE title = "Toy Story 2";
+UPDATE movies SET Director = "Lee Unkrich", Title = "Toy Story 3" WHERE title = "Toy Story 8";
