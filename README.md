@@ -142,3 +142,10 @@ INSERT INTO Boxoffice VALUES (4, 8.7, 340000000, 270000000);
 UPDATE movies SET Director = "John Lasseter" WHERE title = 	"A Bug's Life";
 UPDATE movies SET Year = "1999" WHERE title = "Toy Story 2";
 UPDATE movies SET Director = "Lee Unkrich", Title = "Toy Story 3" WHERE title = "Toy Story 8";
+
+#Deleting rows
+- This database is getting too big, lets remove all movies that were released before 2005. ✓
+- Andrew Stanton has also left the studio, so please remove all movies directed by him. ✓
+
+DELETE FROM Movies  WHERE Year <2005;
+DELETE FROM Movies  WHERE Director = "Andrew Stanton";
