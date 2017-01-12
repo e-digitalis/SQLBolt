@@ -79,7 +79,7 @@ BONUS: SELECT * FROM movies;
 
 #OUTER JOINs
 - Find the list of all buildings that have employees ✓
-- Find the list of all buildings and their capacity ✓
+  - Find the list of all buildings and their capacity ✓
 - List all buildings and the distinct employee roles in each building (including empty buildings) ✓
 
 SELECT DISTINCT Building FROM Employees LEFT JOIN Buildings  ON Employees.Building = Buildings.Building_name;
@@ -149,3 +149,6 @@ UPDATE movies SET Director = "Lee Unkrich", Title = "Toy Story 3" WHERE title = 
 
 DELETE FROM Movies  WHERE Year <2005;
 DELETE FROM Movies  WHERE Director = "Andrew Stanton";
+
+#Creating tables
+CREATE TABLE Database (Name TEXT, director TEXT, Version INTEGER, Download_count INTEGER);
