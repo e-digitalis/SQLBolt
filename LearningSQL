@@ -2,6 +2,7 @@
 Other select statements (world database):
 
 SELECT * FROM country;
+SELECT Indepyear FROM country WHERE continent = 'asia';
 SELECT Name FROM country WHERE SurfaceArea >100000;
 SELECT Name FROM country WHERE SurfaceArea <100000;
 SELECT * FROM city WHERE District = "aceh";
@@ -22,7 +23,52 @@ SELECT Name FROM country WHERE InDepYear < 0;
 SELECT Name, InDepYear FROM country;
 SELECT Name FROM country WHERE InDepYear IS null;
 SELECT Name, InDepYear FROM country WHERE InDepYear IS null;
-SELECT Indepyear FROM country WHERE continent = 'Asia';
 SELECT LifeExpectancy FROM country;
 SELECT name, SurfaceArea, LifeExpectancy FROM country WHERE SurfaceArea < 10 AND LifeExpectancy IS NOT null;
+SELECT Name FROM city WHERE name LIKE "ping%" ORDER BY Population ASC;
+SELECT Name FROM city WHERE name LIKE "ran%" ORDER BY Population DESC;
+SELECT * FROM city WHERE name LIKE "%Pan%";
+SELECT * FROM city WHERE name LIKE "Ciu%";
+SELECT COUNT(Name) AS NumberOfCities FROM city;
+SELECT AVG(Population) AS AveragePopulation FROM city;
+SELECT AVG(Population) AS AveragePopulation FROM city;
+SELECT MAX(Population) AS MaxPopulation FROM city;
+SELECT MIN(Population) AS MaxPopulation FROM city;
+SELECT SUM(Population) AS TotalPopulation FROM city WHERE Population < 10000;
+SELECT COUNT(Name) AS NumberOfCities FROM city WHERE CountryCode = 'MOZ' OR CountryCode = 'VNM';
+SELECT "City count", COUNT(Name) AS NumberOfCities FROM city WHERE CountryCode = 'MOZ' OR CountryCode = 'VNM';
+SELECT CountryCode, COUNT(Name) AS NumberOfCities FROM city WHERE CountryCode = 'MOZ' OR CountryCode = 'VNM' GROUP BY CountryCode;
+SELECT Name, COUNT(Name) AS NumberOfCities FROM city WHERE CountryCode = 'MOZ' OR CountryCode = 'VNM' GROUP BY Name;
+SELECT Name, COUNT(Name) AS NumberOfCities FROM city WHERE CountryCode = 'MOZ' OR CountryCode = 'VNM' GROUP BY CountryCode;
+SELECT CountryCode, COUNT(Name) AS NumberOfCities FROM city WHERE CountryCode = 'PAN';
+SELECT CountryCode, AVG(Population) AS AveragePopulation FROM city WHERE CountryCode = 'MOZ' OR CountryCode = 'VNM' GROUP BY Name ORDER BY CountryCode, Population DESC;
+SELECT CountryCode, COUNT(Name) FROM city WHERE (SELECT COUNT(Name) FROM city) GROUP BY CountryCode;
+SELECT CountryCode, COUNT(Name) FROM city WHERE (SELECT COUNT(Name) FROM city) GROUP BY CountryCode ORDER BY name;
+SELECT CountryCode, COUNT(Name) FROM city GROUP BY CountryCode HAVING COUNT(CountryCode) >200;
+SELECT CountryCode, COUNT(Name) FROM city GROUP BY CountryCode HAVING COUNT(CountryCode) >200 ORDER BY COUNT(CountryCode);
+SELECT Name, Population, countrylanguage.Language FROM city INNER JOIN countrylanguage ON city.CountryCode = countrylanguage.CountryCode WHERE Population > 400 AND Population < 500;
+SELECT Name, Population, countrylanguage.Language FROM city INNER JOIN countrylanguage ON city.CountryCode = countrylanguage.CountryCode WHERE Population > 500 AND Population < 600;
+
+
+
+
+#
+# 15: What names of the cities are in the same country as the city with a population of 122199 (including the that city itself)
+#
+#
+# 16: What names of the cities are in the same country as the city with a population of 122199 (excluding the that city itself)
+#
+#
+# 17: What are the city names in the country where Luanda is capital?
+#
+#
+# 18: What are the names of the capital cities in countries in the same region as the city named Yaren
+#
+#
+# 19: What unique languages are spoken in the countries in the same region as the city named Riga
+#
+#
+# 20: Get the name of the most populous city
+#
+
 
