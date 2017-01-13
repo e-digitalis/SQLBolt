@@ -167,7 +167,8 @@ ALTER TABLE movies ADD Aspect_ratio FLOAT;
 ALTER TABLE movies ADD Language TEXT DEFAULT English;
 
 #Dropping tables
-
+- We have sadly reached the end of our lessons, lets clean up by removing the Movies table ✓
+- And drop the BoxOffice table as well ✓
 
 DROP TABLE IF EXISTS Movies;
 DROP TABLE IF EXISTS BoxOffice;
