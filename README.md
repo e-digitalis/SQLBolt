@@ -1,7 +1,8 @@
 # SQLBolt
 https://sqlbolt.com/
 
-
+# Other SQL Links
+https://www.techonthenet.com/sql/index.php
 
 
 #SELECT statements - SELECT queries 101
