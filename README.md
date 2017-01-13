@@ -165,3 +165,9 @@ CREATE TABLE Database (Name TEXT, director TEXT, Version INTEGER, Download_count
 
 ALTER TABLE movies ADD Aspect_ratio FLOAT;
 ALTER TABLE movies ADD Language TEXT DEFAULT English;
+
+#Dropping tables
+
+
+DROP TABLE IF EXISTS Movies;
+DROP TABLE IF EXISTS BoxOffice;
