@@ -98,9 +98,10 @@ SELECT Building_name FROM Buildings LEFT JOIN Employees ON Buildings.Building_na
 #Queries with expressions
 - List all movies and their combined sales in millions of dollars ✓
 - List all movies and their ratings in percent ✓
+- List all movies that were released on even number years ✓
 
-SELECT Title, (Domestic_sales + International_sales) / 1000000 AS Millions_of_dollars FROM movies INNER JOIN boxoffice ON Movies.Id = Boxoffice.Movie_id;
-SELECT Title, (Rating/10)*100 AS Rating_percentage FROM movies INNER JOIN boxoffice ON Movies.Id = Boxoffice.Movie_id;
+SELECT Title, (Domestic_sales + International_sales) / 1000000 AS Millions_of_dollars FROM movies INNER JOIN boxoffice ON Movies.Id = Boxoffice.Movie_id; SELECT Title, (Rating)*10 AS Rating_percentage FROM movies INNER JOIN boxoffice ON Movies.Id = Boxoffice.Movie_id;
+SELECT Title, (Rating/10)*100 AS Rating_percentage FROM movies INNER JOIN boxoffice ON Movies.Id = Boxoffice.Movie_id; SELECT Title, Year from movies where (Year % 2) = 0;
 
 #Queries with aggregates (Pt. 1)
 - Find the longest time that an employee has been at the studio ✓
