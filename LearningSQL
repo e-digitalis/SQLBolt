@@ -1,6 +1,3 @@
-
-Other select statements (world database):
-
 SELECT * FROM country;
 SELECT Indepyear FROM country WHERE continent = 'asia';
 SELECT Name FROM country WHERE SurfaceArea >100000;
@@ -50,12 +47,40 @@ SELECT Name, Population, countrylanguage.Language FROM city INNER JOIN countryla
 SELECT Name, Population, countrylanguage.Language FROM city INNER JOIN countrylanguage ON city.CountryCode = countrylanguage.CountryCode WHERE Population > 500 AND Population < 600;
 
 
+SELECT CountryCode FROM city WHERE Population = 122199;
+SELECT Name FROM city WHERE CountryCode = 'SWE';
+SELECT Name FROM city WHERE CountryCode = (SELECT CountryCode FROM city WHERE Population = 122199);
+
+SELECT Name, CountryCode FROM city WHERE Population != 122199;
+SELECT Name, CountryCode FROM city WHERE Population <> 122199;
+SELECT Name, CountryCode FROM city WHERE Population != 122199 AND CountryCode = 'SWE';
+SELECT Name, CountryCode FROM city WHERE Population <> 122199 AND CountryCode = 'SWE';
+SELECT Name FROM city WHERE CountryCode = (SELECT CountryCode FROM city WHERE Population <> 122199);
+SELECT Name FROM city WHERE CountryCode = (SELECT CountryCode FROM city WHERE Population != 122199);
+
+SELECT * FROM city c1,city c2;
+SELECT * FROM city c1,city c2 WHERE c1.population=122199;
+SELECT * FROM city c1,city c2 WHERE c1.countrycode=c2.countrycode;
+SELECT * FROM city c1,city c2 WHERE c1.countrycode=c2.countrycode AND c1.population=122199;
+SELECT c2.name FROM city c1,city c2 WHERE c1.countrycode=c2.countrycode AND c1.population=122199;
+
+SELECT Name, CountryCode, country.Capital FROM city INNER JOIN country ON city.CountryCode = country.Code;
+SELECT Name, CountryCode, country.Capital FROM city INNER JOIN country ON city.CountryCode = country.Code FROM city WHERE Population > 122199;
 
 
-#
-# 15: What names of the cities are in the same country as the city with a population of 122199 (including the that city itself)
-#
-#
+SELECT Name, MAX(Population) AS MaxPopulation FROM city;
+
+
+
+SELECT nc.name FROM city yc,country c,city nc WHERE yc.name="luanda" AND yc.id=c.capital AND c.code=nc.countrycode;
+SELECT oci.name FROM city yci,country yco,country oco,city oci WHERE yci.name="Yaren" AND yci.id=yco.capital AND yco.region=oco.region AND oco.capital=oci.id;
+SELECT DISTINCT language FROM city,country cc,country rc,countrylanguage cl WHERE city.name="riga" AND city.countrycode=cc.code AND cc.region=rc.region AND rc.code=cl.countrycode;
+
+SELECT Name, MAX(Population) AS MaxPopulation FROM city;
+SELECT name FROM city tc WHERE tc.population=(SELECT max(population) FROM city);
+SELECT cc.name,cc.population,max(mc.population) mp FROM city cc,city mc GROUP BY cc.name HAVING cc.population=mp;
+
+
 # 16: What names of the cities are in the same country as the city with a population of 122199 (excluding the that city itself)
 #
 #
@@ -70,5 +95,4 @@ SELECT Name, Population, countrylanguage.Language FROM city INNER JOIN countryla
 #
 # 20: Get the name of the most populous city
 #
-
 
