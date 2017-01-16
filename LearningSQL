@@ -64,8 +64,11 @@ SELECT * FROM city c1,city c2 WHERE c1.countrycode=c2.countrycode;
 SELECT * FROM city c1,city c2 WHERE c1.countrycode=c2.countrycode AND c1.population=122199;
 SELECT c2.name FROM city c1,city c2 WHERE c1.countrycode=c2.countrycode AND c1.population=122199;
 
-SELECT Name, CountryCode, country.Capital FROM city INNER JOIN country ON city.CountryCode = country.Code;
-SELECT Name, CountryCode, country.Capital FROM city INNER JOIN country ON city.CountryCode = country.Code FROM city WHERE Population > 122199;
+SELECT * FROM country;
+SELECT * FROM city WHERE name = 'Luanda';
+SELECT * FROM city WHERE countrycode = 'AGO';
+SELECT * FROM city WHERE countrycode = (SELECT CountryCode FROM city WHERE name = 'Luanda');
+SELECT Name FROM city WHERE countrycode = (SELECT CountryCode FROM city WHERE name = 'Luanda');
 
 
 SELECT Name, MAX(Population) AS MaxPopulation FROM city;
